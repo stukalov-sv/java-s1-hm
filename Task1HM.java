@@ -14,7 +14,7 @@ public class Task1HM {
     }
 
     public static void start() {
-        Scanner iScanner = new Scanner(System.in);
+        Scanner iScanner = new Scanner(System.in, "Cp866");
                      
         System.out.println("Enter first number: ");
         float firstNum = iScanner.nextFloat();
@@ -36,7 +36,7 @@ public class Task1HM {
         } else if (getOperator.toCharArray()[0] == '-')  {
             doOperator = 4;
         } else {
-            System.out.printf("Incorrect data - %s. Use *, /, +, -\n", getOperator);
+            System.out.printf("Incorrect data - %s.\nUse *, /, +, -\n", getOperator);
         }
 
         switch (doOperator) {
@@ -61,8 +61,7 @@ public class Task1HM {
             }
         System.out.println("Do you want to continue? (да, нет)");
         String answer = iScanner.nextLine().toLowerCase();
-        System.out.println(answer);
-        if (answer == "да") {
+        if (answer.equals("да")) {
             start();
         }
         iScanner.close();
